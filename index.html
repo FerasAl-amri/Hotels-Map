@@ -1,0 +1,1837 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mohysen Group Hotels</title>
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="css/simpleLightbox.css" />
+    <link type="text/css" rel="stylesheet" href="css/style.css" />      
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Mohysen Group Hotels</a>
+               <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>-->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <!--  <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">File</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Edit</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">View</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Help</a>
+                        </li>-->
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Fullscreen Toggle Button -->
+            <!-- <a id="showPathButton" class="btn btn-light btn-sm me-2" title="Directions"><img src="img/directions.svg" /> </a> -->
+
+            <a id="fullscreenToggle" class="btn btn-light me-2" title="Fullscreen"><img src="img/fullscreen.svg" /></a> 
+
+        </nav>
+    </header>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 sidebar">
+                <h5 class="my-4">Mohysen Group Hotels</h5>
+
+                <div class="list-group locations_list">
+                    <a href="#" class="list-group-item list-group-item-action al_rawda_royal_inn">
+                        <img src="img/marker-icon-small.svg" />
+                        1. Maden Al Rawda 
+                    </a>
+
+                    <a href="#" class="list-group-item list-group-item-action maden_taiba">
+                        <img src="img/marker-icon-small.svg" />
+                        2. Maden Taiba
+                    </a>
+
+                    <a href="#" class="list-group-item list-group-item-action maden_hotel">
+                        <img src="img/marker-icon-small.svg" />
+                        3. Maden Hotel
+                    </a>
+
+                    <a href="#" class="list-group-item list-group-item-action nozol_royal_inn">
+                        <img src="img/marker-icon-small.svg" />
+                        4. Nozol Royal
+                    </a> 
+
+                    <a href="#" class="list-group-item list-group-item-action ruva_al_madinah">
+                        <img src="img/marker-icon-small.svg" />
+                        5. Ruva Al Madinah
+                    </a> 
+
+                    <a href="#" class="list-group-item list-group-item-action view_hotel">
+                        <img src="img/marker-icon-small.svg" />
+                        6. View Hotel
+                    </a>
+
+                    <a href="#" class="list-group-item list-group-item-action finda_al_madinah_hotel">
+                        <img src="img/marker-icon-small.svg" />
+                        7. Finda Al Madinah Hotel
+                    </a>
+
+                    <a href="#" class="list-group-item list-group-item-action maien_al_madinah_hotel">
+                        <img src="img/marker-icon-small.svg" />
+                        8. Maien Al Madinah Hotel
+                    </a>
+
+                    <a href="#" class="list-group-item list-group-item-action valy_al_madinah">
+                        <img src="img/marker-icon-small.svg" />
+                        9. Valy Al Madinah
+                    </a> 
+
+                    <a href="#" class="list-group-item list-group-item-action zaha_hotel">
+                        <img src="img/marker-icon-small.svg" />
+                        10. Zaha Hotel
+                    </a>
+
+                    <a href="#" class="list-group-item list-group-item-action zaha_al_madinah_hotel">
+                        <img src="img/marker-icon-small.svg" />
+                        11. Zaha Al Madinah Hotel
+                    </a>
+
+                    <a href="#" class="list-group-item list-group-item-action zaha_taiba_hotel">
+                        <img src="img/marker-icon-small.svg" />
+                        12. Zaha Taiba Hotel
+                    </a>
+					
+					<a href="javascript:void(0)" class="list-group-item list-group-item-action Qaba_hotel" onclick="changeMapToQaba()">
+                         <img src="img/marker-icon-small.svg" />
+                         13. Qaba Hotel
+                    </a>
+                    
+                </div>
+            </div>
+			
+					
+            <div class="col-md-10 p-0">
+                <div class="map-container">
+                    <img src="img/main_map.jpg" alt="Masked Image" class="map" id="map_image" />
+                    <div class="pin-container" id="pin_container">
+                        <div class="pin" style="top: 33%; left: 47.5%;">
+                            <a href="#" class="maden_hotel">
+                                <span style="width: 100px; top: -18px; left: -40px;">Maden Hotel</span>
+                                <img src="img/marker-icon-blue.svg" />
+                            </a>
+                            <img id="maden_hotel_path" class="path" src="img/maden_hotel/path.svg" />
+                        </div>
+                        <div class="pin" style="top: 33.5%; left: 46.5%;">
+                            <a href="#" class="nozol_royal_inn">
+                                <span style="width: 120px; top: 22px; left: -40px;">Nozol Royal</span>
+                                <img src="img/marker-icon.svg" />
+                            </a>
+                            <img id="nozol_royal_inn_path" class="path" src="img/nozol_royal_inn/path.svg" />
+                        </div>
+                        <div class="pin" style="top: 37.5%; left: 45%;">
+                            <a href="#" class="al_rawda_royal_inn">
+                                <span style="width: 120px; top: 22px; left: -49px;">Maden Al Rawda</span>
+                                <img src="img/marker-icon.svg" />
+                            </a>
+                            <img id="al_rawda_royal_inn_path" class="path" src="img/al_rawda_royal_inn/path.svg" />
+                        </div>
+                        <div class="pin" style="top: 34%; left: 53%;">
+                            <a href="#" class="ruva_al_madinah">
+                                <span style="width: 120px; top: 22px; left: -49px;">Ruva Al Madinah</span>
+                                <img src="img/marker-icon.svg" />
+                            </a>
+                            <img id="ruva_al_madinah_path" class="path" src="img/ruva_al_madinah/path.svg" />
+                        </div>
+                        <div class="pin" style="top: 3.5%; left: 56.5%;">
+                            <a href="#" class="zaha_taiba_hotel">
+                                <span style="width: 120px; top: 22px; left: -49px;">Zaha Tiba Hotel</span>
+                                <img src="img/marker-icon.svg" />
+                            </a>
+                            <img id="zaha_taiba_hotel_path" class="path" src="img/zaha_taiba_hotel/path.svg" />
+                        </div>
+                        <div class="pin" style="top: 76.5%; left: 53%;">
+                            <a href="#" class="view_hotel">
+                                <span style="width: 100px; top: -18px; left: -43px;">View Hotel</span>
+                                <img src="img/marker-icon.svg" />
+                            </a>
+                            <img id="view_hotel_path" class="path" src="img/view_hotel/path.svg" />
+                        </div>
+                        <div class="pin" style="top: 77%; left: 54.7%;">
+                            <a href="#" class="finda_al_madinah_hotel">
+                                <span style="width: 135px; top: 3px; left: 22px;">Finda Al Madinah Hotel</span>
+                                <img src="img/marker-icon.svg" />
+                            </a>
+                            <img id="finda_al_madinah_hotel_path" class="path" src="img/finda_al_madinah_hotel/path.svg" />
+                        </div>
+                        <div class="pin" style="top: 79.5%; left: 54.7%;">
+                            <a href="#" class="valy_al_madinah">
+                                <span style="width: 130px; top: 5px; left: 5px;">Valy Al Madinah</span>
+                                <img src="img/marker-icon.svg" />
+                            </a>
+                            <img id="valy_al_madinah_path" class="path" src="img/valy_al_madinah/path.svg" />
+                        </div>
+                        <div class="pin" style="top: 79.5%; left: 52%;">
+                            <a href="#" class="maien_al_madinah_hotel">
+                                <span style="width: 140px; top: 20px; left: -60px;">Maien Al Madinah Hotel</span>
+                                <img src="img/marker-icon.svg" />
+                            </a>
+                            <img id="maien_al_madinah_hotel_path" class="path" src="img/maien_al_madinah_hotel/path.svg" />
+                        </div>
+                        <div class="pin" style="top: 64.5%; left: 16%;">
+                            <a href="#" class="zaha_hotel">
+                                <span style="width: 100px; top: -18px; left: -43px;">Zaha Hotel</span>
+                                <img src="img/marker-icon.svg" />
+                            </a>
+                            <img id="zaha_hotel_path" class="path" src="img/zaha_hotel/path.svg" />
+
+                        </div>
+                        <div class="pin" style="top: 64.5%; left: 14.5%;">
+                            <a href="#" class="zaha_al_madinah_hotel">
+                                <span style="width: 133px; top: 22px; left: -65px;">Zaha Al Madinah Hotel</span>
+                                <img src="img/marker-icon.svg" />
+                            </a>
+                            <img id="zaha_al_madinah_hotel_path" class="path" src="img/zaha_al_madinah_hotel/path.svg" />
+                        </div>
+                        <div class="pin" style="top: 36%; left: 41.5%;">
+                            <a href="#" class="maden_taiba">
+                                <span style="width: 133px; top: 22px; left: -65px;">Maden Taiba</span>
+                                <img src="img/marker-icon.svg" />
+                            </a>
+                            <img id="maden_taiba_path" class="path" src="img/maden_taiba/path.svg" />
+
+                        </div>
+
+						<div class="pin qaba_pin" style="top: 79.6%; left: 56.6%; display: none;">
+    <a href="javascript:void(0)" onclick="showQabaPath(); showCard('qaba_hotel_card');">
+        <span style="width: 100px; top: -40px; left: -40px;">Qaba Hotel</span>
+        <img src="img/marker-icon-blue.svg" />
+    </a>
+</div>
+
+<img id="qaba_hotel_path" src="img/qaba_hotel/path.svg" class="path"
+     style="display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 5; pointer-events: none; object-fit: fill;" />
+
+                    </div>
+                </div>
+
+                <!-- maden_hotel card -->
+
+                <div id="maden_hotel" class="card position-absolute top-50 end-0 translate-middle-y m-3">
+                    <div class="card-header">
+                        <h3 class="inline-block">Maden Hotel</h3>
+                        <button type="button" class="btn-close float-end closeCardButton" aria-label="Close"></button>
+                    </div>
+
+                    <div class="card-body p-0">
+                        <div id="maden_hotel_carousel" class="carousel slide maden_hotel_gallery">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <a href="img/maden_hotel/001.jpg">
+                                        <img src="img/maden_hotel/001.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/maden_hotel/002.jpg">
+                                        <img src="img/maden_hotel/002.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/maden_hotel/003.jpg">
+                                        <img src="img/maden_hotel/003.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/maden_hotel/004.jpg">
+                                        <img src="img/maden_hotel/004.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/maden_hotel/005.jpg">
+                                        <img src="img/maden_hotel/005.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/maden_hotel/006.jpg">
+                                        <img src="img/maden_hotel/006.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/maden_hotel/007.jpg">
+                                        <img src="img/maden_hotel/007.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/maden_hotel/008.jpg">
+                                        <img src="img/maden_hotel/008.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/maden_hotel/009.jpg">
+                                        <img src="img/maden_hotel/009.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/maden_hotel/010.jpg">
+                                        <img src="img/maden_hotel/010.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/maden_hotel/011.jpg">
+                                        <img src="img/maden_hotel/011.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/maden_hotel/012.jpg">
+                                        <img src="img/maden_hotel/012.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/maden_hotel/013.jpg">
+                                        <img src="img/maden_hotel/013.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/maden_hotel/014.jpg">
+                                        <img src="img/maden_hotel/014.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/maden_hotel/015.jpg">
+                                        <img src="img/maden_hotel/015.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/maden_hotel/016.jpg">
+                                        <img src="img/maden_hotel/016.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/maden_hotel/017.jpg">
+                                        <img src="img/maden_hotel/017.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/maden_hotel/018.jpg">
+                                        <img src="img/maden_hotel/018.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/maden_hotel/019.jpg">
+                                        <img src="img/maden_hotel/019.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/maden_hotel/020.jpg">
+                                        <img src="img/maden_hotel/020.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/maden_hotel/021.jpg">
+                                        <img src="img/maden_hotel/021.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/maden_hotel/022.jpg">
+                                        <img src="img/maden_hotel/022.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/maden_hotel/023.jpg">
+                                        <img src="img/maden_hotel/023.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/maden_hotel/024.jpg">
+                                        <img src="img/maden_hotel/024.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                 
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#maden_hotel_carousel"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#maden_hotel_carousel"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+
+                        <div class="p-3">
+                            <h5 class="card-title">Maden Hotel</h5>
+                            <p class="card-text">
+                                <strong>name:</strong> فندق مادن MADEN HOTEL
+                                <br>
+                                <strong>
+                                    description:
+                                </strong>
+                                يبعد 160 متراً فقط عن المسجد النبوي.مع إطلالة رائعة على الحرم و بالقرب من مدخل النساء.و
+                                يضم  ٣٤٠ غرفة فاخرة و أجنحة رئاسية وملكية ذات التميز و الفخامة مجهزة بباقة شاملة من
+                                الخدمات الراقية والفريدة. يمتاز فندق مادن بالمساحات الكبيرة في الدور الأرضي و البهو وله
+                                ثلاث مداخل مختلفة منها مدخل لكبار الشخصيات ليجعل الإنسيابية سهلة في الدخول إلى مرافق
+                                الفندق    Maden Hotel is located in the North central region within walking distance
+                                of the Prophet’s Mosque (160 m) with gorgeous views to the Haram And near the women's
+                                entrance. The hotel has 340 luxury rooms, presidential and royal suites with excellence
+                                and high -end luxury, equipped with an inclusive package of high-end and unique
+                                services. Maden Hotel features large spaces on the ground floor and lobby, it has three
+                                different entrances, including a VIP entrance, to make aerodynamic access to the hotel
+                                facilities and services as the hotel has ten elevators to serve guests with suitable and
+                                comfortable panoramic areas.‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎
+                                <br>
+                                <br>
+                                <strong>
+                                    Location
+                                </strong>
+                                <br>
+                                24°28'22"N 39°36'38"E
+
+                                <br>
+                                <Br>
+                                <strong>
+                                    name
+                                </strong>
+                                <br>
+                                فندق مادن MADEN HOTEL
+                                <br>
+                                <br>
+                                <strong>
+                                    description
+                                </strong>
+                                <br>يبعد 160 متراً فقط عن المسجد النبوي.مع إطلالة
+
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- nozol_royal_inn card -->
+
+                <div id="nozol_royal_inn" class="card position-absolute top-50 end-0 translate-middle-y m-3">
+                    <div class="card-header">
+                        <h3 class="inline-block">Nozol Royal</h3>
+                        <button type="button" class="btn-close float-end closeCardButton" aria-label="Close"></button>
+                    </div>
+
+                    <div class="card-body p-0">
+                        <div id="nozol_royal_inn_carousel" class="carousel slide nozol_royal_inn_gallery">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <a href="img/nozol_royal_inn/001.jpg">
+                                        <img src="img/nozol_royal_inn/001.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/nozol_royal_inn/002.jpg">
+                                        <img src="img/nozol_royal_inn/002.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/nozol_royal_inn/003.jpg">
+                                        <img src="img/nozol_royal_inn/003.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/nozol_royal_inn/004.jpg">
+                                        <img src="img/nozol_royal_inn/004.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/nozol_royal_inn/005.jpg">
+                                        <img src="img/nozol_royal_inn/005.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/nozol_royal_inn/006.jpg">
+                                        <img src="img/nozol_royal_inn/006.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/nozol_royal_inn/007.jpg">
+                                        <img src="img/nozol_royal_inn/007.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/nozol_royal_inn/008.jpg">
+                                        <img src="img/nozol_royal_inn/008.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/nozol_royal_inn/009.jpg">
+                                        <img src="img/nozol_royal_inn/009.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/nozol_royal_inn/010.jpg">
+                                        <img src="img/nozol_royal_inn/010.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button"
+                                data-bs-target="#nozol_royal_inn_carousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                data-bs-target="#nozol_royal_inn_carousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+
+                        <div class="p-3">
+                            <h5 class="card-title">Nozol Royal</h5>
+                            <p class="card-text">
+                                <strong>name:</strong> Nozol Royal
+                                <br>
+                                <strong>
+                                    description:
+                                </strong>
+                                يتمتع فندق نزل رويال المميز بموقعه الجغرافي المثالي بالمنطقة المركزية الشمالية على
+                                مقربة من المسجد النبوي و الأماكن المقدسة الأخرى في المدينة المنورة،حيث يقع على بعد خطوات
+                                معدودة فقط من المسجد النبوي (١٦٠متر) ، ويضم الفندق ٢٤٠ غرفة فاخرة وأجنحة عائلية و
+                                تنفيذية فسيحة ومجهزة بباقة شاملة من الخدمات الراقية و الفريدة لتلبية رغبات و احتياجات
+                                جميع الضيوف .  The Hotel is located in the North Central region and just steps from the
+                                Prophet’s Mosque (160m). The hotel features direct view of the Prophet’s Mosque and the
+                                city.Hotel has 240 luxury rooms and suites and Royal,Executive suites equipped with a
+                                comprehensive bouquet of high-end and unique services with the possibility of views
+                                direct and wonderful on the Prophet's Mosque and the city.‎‎‎‎‎‎‎‎‎‎
+                                <br> <br>
+
+                                <strong>
+                                    Location
+                                </strong>
+                                <br>
+                                24°28'21"N 39°36'37"E
+
+                                <br>
+                                <Br>
+                                <strong>
+                                    name
+                                </strong>
+                                <br>
+                                Nozol Royal
+                                <br>
+                                <br>
+                                <strong>
+                                    description
+                                </strong>
+                                <br>
+
+                                يتمتع فندق نزل رويال المميز بموقعه الجغرافي
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- al_rawda_royal_inn card -->
+
+                <div id="al_rawda_royal_inn" class="card position-absolute top-50 end-0 translate-middle-y m-3">
+                    <div class="card-header">
+                        <h3 class="inline-block">Maden Al Rawda</h3>
+                        <button type="button" class="btn-close float-end closeCardButton" aria-label="Close"></button>
+                    </div>
+
+                    <div class="card-body p-0">
+                        <div id="al_rawda_royal_inn_carousel" class="carousel slide al_rawda_royal_inn_gallery">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <a href="img/al_rawda_royal_inn/001.jpg">
+                                        <img src="img/al_rawda_royal_inn/001.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/al_rawda_royal_inn/002.jpg">
+                                        <img src="img/al_rawda_royal_inn/002.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/al_rawda_royal_inn/003.jpg">
+                                        <img src="img/al_rawda_royal_inn/003.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/al_rawda_royal_inn/004.jpg">
+                                        <img src="img/al_rawda_royal_inn/004.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/al_rawda_royal_inn/005.jpg">
+                                        <img src="img/al_rawda_royal_inn/005.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/al_rawda_royal_inn/006.jpg">
+                                        <img src="img/al_rawda_royal_inn/006.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/al_rawda_royal_inn/007.jpg">
+                                        <img src="img/al_rawda_royal_inn/007.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/al_rawda_royal_inn/008.jpg">
+                                        <img src="img/al_rawda_royal_inn/008.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/al_rawda_royal_inn/009.jpg">
+                                        <img src="img/al_rawda_royal_inn/009.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/al_rawda_royal_inn/010.jpg">
+                                        <img src="img/al_rawda_royal_inn/010.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/al_rawda_royal_inn/011.jpg">
+                                        <img src="img/al_rawda_royal_inn/011.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button"
+                                data-bs-target="#al_rawda_royal_inn_carousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                data-bs-target="#al_rawda_royal_inn_carousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+
+                        <div class="p-3">
+                            <h5 class="card-title">Maden Al Rawda</h5>
+                            <p class="card-text">
+                                <strong>name:</strong>Maden Al Rawda
+                                <br>
+                                <strong>
+                                    description:
+                                </strong>
+                                يقع الفندق في المنطقة المركزية الشمالية وعلى بعد خطوات (٤٠ متر فقط) من الحرم ، ويتميز
+                                الفندق بإطلالته المباشرة على المسجد النبوي الشريف و المدينة،و يضم ٣٢٦ غرفة فاخرة وأجنحة
+                                رئاسية و ملكية ذات التميز و
+                                الفخامة الراقية،مجهزة بباقة شاملة من الخدمات الراقية و الفريدة مع إمكانية لإطلالة مباشرة
+                                و رائعة على المسجد النبوي الشريف و المدينة. The hotel is located in the North Central
+                                region and just steps from
+                                the Prophet’s Mosque (40 meters), the hotel features direct view of the Prophet’s Mosque
+                                and the city.Hotel has 326 luxury rooms and suites and Royal,Executive suites equipped
+                                with a comprehensive bouquet
+                                of high-end and unique services with the possibility of views direct and wonderful on
+                                the Prophet's Mosque and the city.
+                                <br> <br>
+
+                                <strong>
+                                    Location
+                                </strong>
+                                <br>
+                                24°28'19"N 39°36'35"E
+
+                                <br>
+                                <Br>
+                                <strong>
+                                    name
+                                </strong>
+                                <br>
+                                Maden Al Rawda
+                                <br>
+                                <br>
+                                <strong>
+                                    description
+                                </strong>
+                                <br>
+
+                                يقع الفندق في المنطقة المركزية الشمالية
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ruva_al_madinah card -->
+
+                <div id="ruva_al_madinah" class="card position-absolute top-50 end-0 translate-middle-y m-3">
+                    <div class="card-header">
+                        <h3 class="inline-block">Ruva Al Madinah</h3>
+                        <button type="button" class="btn-close float-end closeCardButton" aria-label="Close"></button>
+                    </div>
+
+                    <div class="card-body p-0">
+                        <div id="ruva_al_madinah_carousel" class="carousel slide ruva_al_madinah_gallery">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <a href="img/ruva_al_madinah/001.jpg">
+                                        <img src="img/ruva_al_madinah/001.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/ruva_al_madinah/002.jpg">
+                                        <img src="img/ruva_al_madinah/002.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/ruva_al_madinah/003.jpg">
+                                        <img src="img/ruva_al_madinah/003.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/ruva_al_madinah/004.jpg">
+                                        <img src="img/ruva_al_madinah/004.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/ruva_al_madinah/005.jpg">
+                                        <img src="img/ruva_al_madinah/005.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/ruva_al_madinah/006.jpg">
+                                        <img src="img/ruva_al_madinah/006.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/ruva_al_madinah/007.jpg">
+                                        <img src="img/ruva_al_madinah/007.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/ruva_al_madinah/008.jpg">
+                                        <img src="img/ruva_al_madinah/008.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/ruva_al_madinah/009.jpg">
+                                        <img src="img/ruva_al_madinah/009.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/ruva_al_madinah/010.jpg">
+                                        <img src="img/ruva_al_madinah/010.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/ruva_al_madinah/011.jpg">
+                                        <img src="img/ruva_al_madinah/011.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button"
+                                data-bs-target="#ruva_al_madinah_carousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                data-bs-target="#ruva_al_madinah_carousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+
+                        <div class="p-3">
+                            <h5 class="card-title">Ruva Al Madinah</h5>
+                            <p class="card-text">
+                                <strong>name:</strong> Ruve Al Madinah
+                                <br>
+                                <strong>
+                                    description:
+                                </strong>
+                                يقع على بعد 160متراً فقط من المسجد النبوي الشريف .و يتميز بتصميمه الفريد بالإضافة إلى
+                                خدمات فندقية عالية المستوى تلبي كافة احتياجات الحجاج و المعتمرين و رجال الأعمال .يضم
+                                الفندق 331 غرفة مصممة بالشكل الذي
+                                يحقق الراحة للنزلاء .و يقدم الفندق تنوعاً متكاملاً في أشكال الغرف حيث تتوافر غرف لرجال
+                                الأعمال و لذوي الاحتياجات الخاصة و أجنحة صغيرة و جناح ملكي.The hotel is located in the
+                                North Central area of Madinah,
+                                the Hotel is just 160m away from the Prophet’s Mosque. It is distinguished by its unique
+                                design, in addition to high-level hotel services that meet all the needs of pilgrims and
+                                businessmen. The hotel
+                                includes 331 rooms designed in a way that achieves comfort for guests. The hotel offers
+                                a variety of accommodation options including standard rooms ,Business rooms,Superior
+                                rooms,for guests with special
+                                needs, and a royal suite.
+                                <br> <br>
+
+                                <strong>
+                                    Location
+                                </strong>
+                                <br>
+                                24°28'21"N 39°36'46"E
+
+                                <br>
+                                <Br>
+                                <strong>
+                                    name
+                                </strong>
+                                <br>
+                                Ruve Al Madinah
+                                <br>
+                                <br>
+                                <strong>
+                                    description
+                                </strong>
+                                <br>
+                                يقع على بعد 160متراً فقط من المسجد النبوي الشريف
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- valy_al_madinah card -->
+
+                <div id="valy_al_madinah" class="card position-absolute top-50 end-0 translate-middle-y m-3">
+                    <div class="card-header">
+                        <h3 class="inline-block">Valy Al Madinah</h3>
+                        <button type="button" class="btn-close float-end closeCardButton" aria-label="Close"></button>
+                    </div>
+
+                    <div class="card-body p-0">
+                        <div id="valy_al_madinah_carousel" class="carousel slide valy_al_madinah_gallery">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <a href="img/valy_al_madinah/001.jpg">
+                                        <img src="img/valy_al_madinah/001.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/valy_al_madinah/002.jpg">
+                                        <img src="img/valy_al_madinah/002.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/valy_al_madinah/003.jpg">
+                                        <img src="img/valy_al_madinah/003.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/valy_al_madinah/004.jpg">
+                                        <img src="img/valy_al_madinah/004.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/valy_al_madinah/005.jpg">
+                                        <img src="img/valy_al_madinah/005.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/valy_al_madinah/006.jpg">
+                                        <img src="img/valy_al_madinah/006.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/valy_al_madinah/007.jpg">
+                                        <img src="img/valy_al_madinah/007.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/valy_al_madinah/008.jpg">
+                                        <img src="img/valy_al_madinah/008.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/valy_al_madinah/009.jpg">
+                                        <img src="img/valy_al_madinah/009.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/valy_al_madinah/010.jpg">
+                                        <img src="img/valy_al_madinah/010.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/valy_al_madinah/011.jpg">
+                                        <img src="img/valy_al_madinah/011.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/valy_al_madinah/012.jpg">
+                                        <img src="img/valy_al_madinah/012.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button"
+                                data-bs-target="#valy_al_madinah_carousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                data-bs-target="#valy_al_madinah_carousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+
+                        <div class="p-3">
+                            <h5 class="card-title">Valy Al Madinah</h5>
+                            <p class="card-text">
+                                <strong>name:</strong> Valy Al Madinah
+                                <br>
+                                <strong>
+                                    description:
+                                </strong>
+                                يقع الفندق في المنطقة المركزية الجنوبية وعلى بعد خطوات (130 متر فقط) من الحرم ، ويتميز
+                                الفندق المصنف 4 نجوم بإحتواءه على عدد من الغرف والأجنحة الفندقية و الأجنحة الملكية مع
+                                مراعاة أعلى معايير الفخامة و
+                                الجودة في اختيار خامات التنفيذ والتشطيب , حيث يضم 369 غرفة بـ 1369 سرير ,مع توفير جميع
+                                وسائل الراحة والتجهيزات الحديثة.The hotel is located in the South central Area, just
+                                steps away (only 130 meters)
+                                from the Haram. The 4-star classified hotel stands out for its various hotel rooms,
+                                suites, and royal suites, adhering to the highest standards of luxury and quality in the
+                                selection of materials for
+                                execution and finishing. It comprises 369 rooms with 1369 beds, providing all modern
+                                amenities and facilities.
+                                <br> <br>
+
+                                <strong>
+                                    Location
+                                </strong>
+                                <br>
+                                24°27'50"N 39°36'48"E
+
+                                <br>
+                                <Br>
+                                <strong>
+                                    name
+                                </strong>
+                                <br>
+                                Valy Al Madinah
+
+                                <br>
+                                <br>
+                                <strong>
+                                    description
+                                </strong>
+                                <br>
+                                يقع الفندق في المنطقة المركزية الجنوبية
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- finda_al_madinah_hotel card -->
+
+                <div id="finda_al_madinah_hotel" class="card position-absolute top-50 end-0 translate-middle-y m-3">
+                    <div class="card-header">
+                        <h3 class="inline-block">Finda Al Madinah Hotel</h3>
+                        <button type="button" class="btn-close float-end closeCardButton" aria-label="Close"></button>
+                    </div>
+
+                    <div class="card-body p-0">
+                        <div id="finda_al_madinah_hotel_carousel" class="carousel slide finda_al_madinah_hotel_gallery">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <a href="img/finda_al_madinah_hotel/001.jpg">
+                                        <img src="img/finda_al_madinah_hotel/001.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/finda_al_madinah_hotel/002.jpg">
+                                        <img src="img/finda_al_madinah_hotel/002.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/finda_al_madinah_hotel/003.jpg">
+                                        <img src="img/finda_al_madinah_hotel/003.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/finda_al_madinah_hotel/004.jpg">
+                                        <img src="img/finda_al_madinah_hotel/004.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/finda_al_madinah_hotel/005.jpg">
+                                        <img src="img/finda_al_madinah_hotel/005.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/finda_al_madinah_hotel/006.jpg">
+                                        <img src="img/finda_al_madinah_hotel/006.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/finda_al_madinah_hotel/007.jpg">
+                                        <img src="img/finda_al_madinah_hotel/007.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/finda_al_madinah_hotel/008.jpg">
+                                        <img src="img/finda_al_madinah_hotel/008.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/finda_al_madinah_hotel/009.jpg">
+                                        <img src="img/finda_al_madinah_hotel/009.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/finda_al_madinah_hotel/010.jpg">
+                                        <img src="img/finda_al_madinah_hotel/010.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button"
+                                data-bs-target="#finda_al_madinah_hotel_carousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                data-bs-target="#finda_al_madinah_hotel_carousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+
+                        <div class="p-3">
+                            <h5 class="card-title">Finda Al Madinah Hotel</h5>
+                            <p class="card-text">
+                                <strong>name:</strong> Finda Al Madinah Hotel
+                                <br>
+                                <strong>
+                                    description:
+                                </strong>
+                                في قلب المنطقة المركزية الجنوبية يقع فندق فندا المصنف 5 نجوم ,وعلى بعد (130 متر فقط) من
+                                الحرم ، بـ1364 سرير في 383 غرفة يجمع فيها الفندق بين الفخامة والراحة والخدمات
+                                الاستثنائية التي تجعل من رحلة زوار
+                                المدينة المنورة رحلة مميزة و فريدة لا تنسى.حيث تعتبر الخدمة الفندقية في فندا فنّاَ يتجسد
+                                في التفاني و  الاهتمام بأدق التفاصيل. In the heart of the South central Area, , the
+                                5-star rated Finda Hotel is
+                                located, just (130 meters) away from the Haram. With 1364 beds in 383 rooms, the hotel
+                                seamlessly combines luxury, comfort, and exceptional services, making the journey of
+                                visitors to Al-Madina a unique
+                                and unforgettable experience. The hotel's hospitality is manifested in dedication and
+                                attention to the finest details.
+                                <br> <br>
+
+                                <strong>
+                                    Location
+                                </strong>
+                                <br>
+                                24°27'51"N 39°36'48"E
+
+                                <br>
+                                <Br>
+                                <strong>
+                                    name
+                                </strong>
+                                <br>
+                                Finda Al Madinah Hotel
+                                <br>
+                                <br>
+                                <strong>
+                                    description
+                                </strong>
+                                <br>
+                                في قلب المنطقة المركزية الجنوبية يقع فندق فندا
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- maien_al_madinah_hotel card -->
+
+                <div id="maien_al_madinah_hotel" class="card position-absolute top-50 end-0 translate-middle-y m-3">
+                    <div class="card-header">
+                        <h3 class="inline-block">Maien Al Madinah Hotel</h3>
+                        <button type="button" class="btn-close float-end closeCardButton" aria-label="Close"></button>
+                    </div>
+
+                    <div class="card-body p-0">
+                        <div id="maien_al_madinah_hotel_carousel" class="carousel slide maien_al_madinah_hotel_gallery">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <a href="img/maien_al_madinah_hotel/001.jpg">
+                                        <img src="img/maien_al_madinah_hotel/001.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/maien_al_madinah_hotel/002.jpg">
+                                        <img src="img/maien_al_madinah_hotel/002.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/maien_al_madinah_hotel/003.jpg">
+                                        <img src="img/maien_al_madinah_hotel/003.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/maien_al_madinah_hotel/004.jpg">
+                                        <img src="img/maien_al_madinah_hotel/004.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/maien_al_madinah_hotel/005.jpg">
+                                        <img src="img/maien_al_madinah_hotel/005.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/maien_al_madinah_hotel/006.jpg">
+                                        <img src="img/maien_al_madinah_hotel/006.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/maien_al_madinah_hotel/007.jpg">
+                                        <img src="img/maien_al_madinah_hotel/007.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/maien_al_madinah_hotel/008.jpg">
+                                        <img src="img/maien_al_madinah_hotel/008.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/maien_al_madinah_hotel/009.jpg">
+                                        <img src="img/maien_al_madinah_hotel/009.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/maien_al_madinah_hotel/010.jpg">
+                                        <img src="img/maien_al_madinah_hotel/010.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/maien_al_madinah_hotel/011.jpg">
+                                        <img src="img/maien_al_madinah_hotel/011.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/maien_al_madinah_hotel/012.jpg">
+                                        <img src="img/maien_al_madinah_hotel/012.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button"
+                                data-bs-target="#maien_al_madinah_hotel_carousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                data-bs-target="#maien_al_madinah_hotel_carousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+
+                        <div class="p-3">
+                            <h5 class="card-title">Maien Al Madinah Hotel</h5>
+                            <p class="card-text">
+                                <strong>name:</strong> Maien Al Madinah Hotel
+                                <br>
+                                <strong>
+                                    description:
+                                </strong>
+                                يعد فندق معين طيبة من أكبر وأضخم الفنادق المتميزة المجهزة لخدمة الحجاج و المعتمرين
+                                بالمنطقة المركزية الجنوبية بجوار الحرم النبوي الشريف مباشرة على مسافة (130) متر فقط من
+                                الحرم.حيث يضم 512 غرفة و 1820 سرير
+                                موزعة بين غرف متنوعة وأجنحة مختلفة مجهزة بأحدث التقنيات و وسائل الراحة, إضافة للخدمة
+                                الاستثنائية التي تتجاوز التوقعات.Maien Taiba Hotel is one of the largest and most
+                                distinguished hotels catering to the
+                                service of pilgrims and visitors in the central southern , right next to the Noble
+                                Sanctuary, just (130) meters away from the Haram. It comprises 512 rooms and 1820 beds
+                                distributed among various rooms
+                                and different suites equipped with the latest technologies and amenities, in addition to
+                                exceptional services that exceed expectations.
+                                <br> <br>
+
+                                <strong>
+                                    Location
+                                </strong>
+                                <br>
+                                24°27'50"N 39°36'45"E
+
+                                <br>
+                                <Br>
+                                <strong>
+                                    name
+                                </strong>
+                                <br>
+                                Maien Al Madinah Hotel
+
+                                <br>
+                                <br>
+                                <strong>
+                                    description
+                                </strong>
+                                <br>
+                                يعد فندق معين طيبة من أكبر وأضخم الفنادق
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- view_hotel card -->
+
+                <div id="view_hotel" class="card position-absolute top-50 end-0 translate-middle-y m-3">
+                    <div class="card-header">
+                        <h3 class="inline-block">View Hotel</h3>
+                        <button type="button" class="btn-close float-end closeCardButton" aria-label="Close"></button>
+                    </div>
+
+                    <div class="card-body p-0">
+                        <div id="view_hotel_carousel" class="carousel slide view_hotel_gallery">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <a href="img/view_hotel/001.jpg">
+                                        <img src="img/view_hotel/001.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/view_hotel/002.jpg">
+                                        <img src="img/view_hotel/002.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/view_hotel/003.jpg">
+                                        <img src="img/view_hotel/003.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/view_hotel/004.jpg">
+                                        <img src="img/view_hotel/004.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/view_hotel/005.jpg">
+                                        <img src="img/view_hotel/005.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/view_hotel/006.jpg">
+                                        <img src="img/view_hotel/006.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/view_hotel/007.jpg">
+                                        <img src="img/view_hotel/007.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/view_hotel/008.jpg">
+                                        <img src="img/view_hotel/008.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/view_hotel/009.jpg">
+                                        <img src="img/view_hotel/009.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/view_hotel/010.jpg">
+                                        <img src="img/view_hotel/010.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#view_hotel_carousel"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#view_hotel_carousel"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+
+                        <div class="p-3">
+                            <h5 class="card-title">View Hotel</h5>
+                            <p class="card-text">
+                                <strong>name:</strong> View Hotel
+                                <br>
+                                <strong>
+                                    description:
+                                </strong>
+                                على بعد (130 متر فقط) من الحرم بالمنطقة المركزية الجنوبية يقع فندق ڤ﻿يو المدينة ،بـسعة
+                                1200 سرير في 347 غرف وأجنحة منوعة تلبي مختلف الاحتياجات, ونظراً للموقع الفريد الذي يحظى
+                                به الفندق يمكن لبعض الغرف فيه
+                                من رؤية منظر مباشر لجزء من المسجد النبوي (بوابة بدر وبوابة أحد وبوابة علي بن أبي
+                                طالب).مما يضيف له قيمة مضافة فريدة و مبهرة.Located just (130 meters) from the Haram in
+                                the South central Area, Al-Madina
+                                City View Hotel features 1200 beds in 347 rooms and various suites to meet different
+                                needs. Due to its unique location, some rooms in the hotel offer a direct view of a
+                                portion of the Prophet's Mosque
+                                (Badr Gate, Uhud Gate, and Ali ibn Abi Talib Gate), adding a unique and mesmerizing
+                                value.
+                                <br> <br>
+
+                                <strong>
+                                    Location
+                                </strong>
+                                <br>
+                                24°27'52"N 39°36'46"E
+
+                                <br>
+                                <Br>
+                                <strong>
+                                    name
+                                </strong>
+                                <br>
+                                View Hotel
+
+                                <br>
+                                <br>
+                                <strong>
+                                    description
+                                </strong>
+                                <br>
+                                على بعد (130 متر فقط) من الحرم بالمنطقة المركزية
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- zaha_hotel card -->
+
+                <div id="zaha_hotel" class="card position-absolute top-50 end-0 translate-middle-y m-3">
+                    <div class="card-header">
+                        <h3 class="inline-block">Zaha Hotel</h3>
+                        <button type="button" class="btn-close float-end closeCardButton" aria-label="Close"></button>
+                    </div>
+
+                    <div class="card-body p-0">
+                        <div id="zaha_hotel_carousel" class="carousel slide zaha_hotel_gallery">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <a href="img/zaha_hotel/001.jpg">
+                                        <img src="img/zaha_hotel/001.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/zaha_hotel/002.jpg">
+                                        <img src="img/zaha_hotel/002.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/zaha_hotel/003.jpg">
+                                        <img src="img/zaha_hotel/003.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/zaha_hotel/004.jpg">
+                                        <img src="img/zaha_hotel/004.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/zaha_hotel/005.jpg">
+                                        <img src="img/zaha_hotel/005.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/zaha_hotel/006.jpg">
+                                        <img src="img/zaha_hotel/006.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/zaha_hotel/007.jpg">
+                                        <img src="img/zaha_hotel/007.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/zaha_hotel/008.jpg">
+                                        <img src="img/zaha_hotel/008.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/zaha_hotel/009.jpg">
+                                        <img src="img/zaha_hotel/009.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/zaha_hotel/010.jpg">
+                                        <img src="img/zaha_hotel/010.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/zaha_hotel/011.jpg">
+                                        <img src="img/zaha_hotel/011.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#zaha_hotel_carousel"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#zaha_hotel_carousel"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+
+                        <div class="p-3">
+                            <h5 class="card-title">Zaha Hotel</h5>
+                            <p class="card-text">
+                                <strong>name:</strong>
+                                Zaha Hotel
+                                <br>
+                                <strong>
+                                    description:
+                                </strong>
+                                يتواجد فندق زها المنورة على بُعد حوالي 800 متر من المسجد النبوي، مما يعادل تقريبًا 9
+                                دقائق سيرًا على الأقدام وبالقرب من باب السلام. يضم الفندق 139 غرفة من مختلف الأنواع،
+                                تُلبي احتياجات وراحة جميع النزلاء.
+                                يتميز بتصميمه الفريد ويرتقي إلى أعلى مستويات الفخامة، مع الالتزام بأعلى المعايير في
+                                اختيار الأثاث وتوفير الخدمات التكنولوجية. بالإضافة إلى ذلك، يُقدم خدمات فندقية متميزة
+                                تلبي جميع احتياجات الحجاج
+                                والمعتمرين ورجال الأعمال  Zaha Al Munawarah Hotel is located approximately 800 meters
+                                from the Prophet's Mosque, just a 9-minute walk and close to Bab As-Salam. The hotel
+                                features 118 rooms of various
+                                types to meet all the guests' needs and ensure their comfort. It is distinguished by its
+                                unique design, reaching the highest levels of luxury, and commitment to standards in
+                                selecting furniture and
+                                technological services. In addition, it offers high-level hotel services that cater to
+                                the needs of pilgrims, Umrah performers, and business travelers.
+                                <br> <br>
+
+                                <strong>
+                                    Location
+                                </strong>
+                                <br>
+                                24°28'00"N 39°35'57"E
+
+                                <br>
+                                <Br>
+                                <strong>
+                                    name
+                                </strong>
+                                <br>
+                                Zaha Hotel
+
+                                <br>
+                                <br>
+                                <strong>
+                                    description
+                                </strong>
+                                <br>
+                                يتواجد فندق زها المنورة على بُعد حوالي 800 متر
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- zaha_al_madinah_hotel card -->
+
+                <div id="zaha_al_madinah_hotel" class="card position-absolute top-50 end-0 translate-middle-y m-3">
+                    <div class="card-header">
+                        <h3 class="inline-block">Zaha Al Madinah Hotel</h3>
+                        <button type="button" class="btn-close float-end closeCardButton" aria-label="Close"></button>
+                    </div>
+
+                    <div class="card-body p-0">
+                        <div id="zaha_al_madinah_hotel_carousel" class="carousel slide zaha_al_madinah_hotel_gallery">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <a href="img/zaha_al_madinah_hotel/001.jpg">
+                                        <img src="img/zaha_al_madinah_hotel/001.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/zaha_al_madinah_hotel/002.jpg">
+                                        <img src="img/zaha_al_madinah_hotel/002.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/zaha_al_madinah_hotel/003.jpg">
+                                        <img src="img/zaha_al_madinah_hotel/003.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/zaha_al_madinah_hotel/004.jpg">
+                                        <img src="img/zaha_al_madinah_hotel/004.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/zaha_al_madinah_hotel/005.jpg">
+                                        <img src="img/zaha_al_madinah_hotel/005.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/zaha_al_madinah_hotel/006.jpg">
+                                        <img src="img/zaha_al_madinah_hotel/006.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/zaha_al_madinah_hotel/007.jpg">
+                                        <img src="img/zaha_al_madinah_hotel/007.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/zaha_al_madinah_hotel/008.jpg">
+                                        <img src="img/zaha_al_madinah_hotel/008.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button"
+                                data-bs-target="#zaha_al_madinah_hotel_carousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                data-bs-target="#zaha_al_madinah_hotel_carousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+
+                        <div class="p-3">
+                            <h5 class="card-title">Zaha Al Madinah Hotel</h5>
+                            <p class="card-text">
+                                <strong>name:</strong> Zaha Al Madinah Hotel
+                                <br>
+                                <strong>
+                                    description:
+                                </strong>
+                                تواجد فندق زها المدينة على بُعد حوالي 800 متر من المسجد النبوي، مما يعادل تقريبًا 9
+                                دقائق سيرًا على الأقدام وبالقرب من باب السلام. يضم الفندق 139 غرفة من مختلف الأنواع،
+                                تُلبي احتياجات وراحة جميع النزلاء.
+                                يتميز بتصميمه الفريد ويرتقي إلى أعلى مستويات الفخامة، مع الالتزام بأعلى المعايير في
+                                اختيار الأثاث وتوفير الخدمات التكنولوجية. بالإضافة إلى ذلك، يُقدم خدمات فندقية متميزة
+                                تلبي جميع احتياجات الحجاج
+                                والمعتمرين ورجال الأعمال Zaha Al Madina Hotel is located approximately 800 meters from
+                                the Prophet's Mosque, equivalent to about a 9-minute walk and in close proximity to Bab
+                                As-Salam. The hotel comprises
+                                139 rooms of various types, catering to the needs and comfort of all guests.
+                                Distinguished by its unique design, it reaches the highest levels of luxury, adhering to
+                                the highest standards in furniture
+                                selection and technological services. Additionally, it provides outstanding hotel
+                                services that meet the needs of pilgrims, Umrah performers, and business professionals
+                                <br> <br>
+
+                                <strong>
+                                    Location
+                                </strong>
+                                <br>
+                                24°28'00"N 39°35'55"E
+
+                                <br>
+                                <Br>
+                                <strong>
+                                    name
+                                </strong>
+                                <br>
+                                Zaha Al Madinah Hotel
+                                <br>
+                                <br>
+                                <strong>
+                                    description
+                                </strong>
+                                <br>
+                                تواجد فندق زها المدينة على بُعد حوالي 800 متر
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- zaha_taiba_hotel card -->
+
+                <div id="zaha_taiba_hotel" class="card position-absolute top-50 end-0 translate-middle-y m-3">
+                    <div class="card-header">
+                        <h3 class="inline-block">Zaha Taiba Hotel</h3>
+                        <button type="button" class="btn-close float-end closeCardButton" aria-label="Close"></button>
+                    </div>
+
+                    <div class="card-body p-0">
+                        <div id="zaha_taiba_hotel_carousel" class="carousel slide zaha_taiba_hotel_gallery">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <a href="img/zaha_taiba_hotel/001.jpg">
+                                        <img src="img/zaha_taiba_hotel/001.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/zaha_taiba_hotel/002.jpg">
+                                        <img src="img/zaha_taiba_hotel/002.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/zaha_taiba_hotel/003.jpg">
+                                        <img src="img/zaha_taiba_hotel/003.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/zaha_taiba_hotel/004.jpg">
+                                        <img src="img/zaha_taiba_hotel/004.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/zaha_taiba_hotel/005.jpg">
+                                        <img src="img/zaha_taiba_hotel/005.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/zaha_taiba_hotel/006.jpg">
+                                        <img src="img/zaha_taiba_hotel/006.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/zaha_taiba_hotel/007.jpg">
+                                        <img src="img/zaha_taiba_hotel/007.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/zaha_taiba_hotel/008.jpg">
+                                        <img src="img/zaha_taiba_hotel/008.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/zaha_taiba_hotel/009.jpg">
+                                        <img src="img/zaha_taiba_hotel/009.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/zaha_taiba_hotel/010.jpg">
+                                        <img src="img/zaha_taiba_hotel/010.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/zaha_taiba_hotel/011.jpg">
+                                        <img src="img/zaha_taiba_hotel/011.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/zaha_taiba_hotel/012.jpg">
+                                        <img src="img/zaha_taiba_hotel/012.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button"
+                                data-bs-target="#zaha_taiba_hotel_carousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                data-bs-target="#zaha_taiba_hotel_carousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+
+                        <div class="p-3">
+                            <h5 class="card-title">Zaha Taiba Hotel</h5>
+                            <p class="card-text">
+                                <strong>name:</strong>
+                                Zaha Taiba Hotel
+                                <br>
+                                <strong>
+                                    description:
+                                </strong>
+                                يقع فندق زها طيبة مسافة حوالي 1.6 كم من المسجد النبوي .ويضم 319 غرفة مجهزة بأعلى مستويات
+                                الفخامة ومصممة بالشكل الذي يحقق الراحة التامة للنزلاء,و مجهزة بأحدث وسائل الإتصال
+                                التكنولوجية الحديثة , هذا ويقدم
+                                الفندق تنوعاً متكاملاً في أشكال الغرف حيث تتوافر غرف لرجال الأعمال ولذوي الاحتياجات
+                                الخاصة وأجنحة صغيرة .  The Zaha Tayiba Hotel is located approximately 1.6 km from the
+                                Prophet's Mosque. It features 319
+                                rooms equipped with the highest levels of luxury, designed to provide complete comfort
+                                for guests. The rooms are equipped with the latest modern communication technology. The
+                                hotel offers a comprehensive
+                                variety of room types, including rooms for business travelers, those with special needs,
+                                and small suites
+                                <br>
+                                <br>
+
+                                <strong>
+                                    Location
+                                </strong>
+                                <br>
+                                24°28'46"N 39°36'52"E
+
+                                <br>
+                                <Br>
+                                <strong>
+                                    name
+                                </strong>
+                                <br>
+                                Zaha Taiba Hotel
+
+                                <br>
+                                <br>
+                                <strong>
+                                    description
+                                </strong>
+                                <br>
+                                يقع فندق زها طيبة مسافة حوالي 1.6 كم من المسجد النبوي
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- maden_taiba card -->
+
+                <div id="maden_taiba" class="card position-absolute top-50 end-0 translate-middle-y m-3">
+                    <div class="card-header">
+                        <h3 class="inline-block">Maden Taiba</h3>
+                        <button type="button" class="btn-close float-end closeCardButton" aria-label="Close"></button>
+                    </div>
+
+                    <div class="card-body p-0">
+                        <div id="maden_taiba_carousel" class="carousel slide maden_taiba_gallery">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <a href="img/maden_taiba/001.jpg">
+                                        <img src="img/maden_taiba/001.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/maden_taiba/002.jpg">
+                                        <img src="img/maden_taiba/002.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/maden_taiba/003.jpg">
+                                        <img src="img/maden_taiba/003.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="img/maden_taiba/004.jpg">
+                                        <img src="img/maden_taiba/004.jpg" class="d-block w-100" alt="..." />
+                                    </a>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#maden_taiba_carousel"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#maden_taiba_carousel"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+
+                        <div class="p-3">
+                            <h5 class="card-title">Maden Taiba</h5>
+                            <p class="card-text">
+                                <strong>name:</strong>
+
+                                 Maden Taiba
+
+                                <br>
+                                <strong>
+                                    description:
+                                </strong>
+                                استكشف أحدث ما في الضيافة الفاخرة في فندق مادن طيبة، حيث تلتقي الأناقة والراحة مع
+                                التصميم الحديث لتتجاوز كل توقعاتك. يقع الفندق بشكل استراتيجي على بعد خطوات قليلة من
+                                المسجد النبوي (182) متراً فقط، ويوفر فندق مادن طيبة تجربة إقامة محكمة بعناية حيث تتجانس
+                                الفخامة والتفرد لتلبية جميع رغباتك . استمتع بتجربة استثنائية في فندق مادن طيبة، الذي
+                                يقدم 317 غرفة مصممة بأناقة لتلبية كافة احتياجاتك. تم تجهيز كل غرفة بأحدث التقنيات
+                                والمرافق الحديثة لضمان راحتك وتمتعك. إقامتك في مادن طيبة تضمن لك مجموعة متنوعة من خيارات
+                                الطعام الراقي ومرافق الاجتماعات والفعاليات مما يضيف لمسة من الاسترخاء والتسلية لتجربتك.
+
+                                Explore the latest in luxury hospitality at Maden Taiba Hotel, where elegance and
+                                comfort meet modern design to exceed all your expectations. Located strategically just
+                                steps away from the Prophet's Mosque (182)m, Maden Taiba Hotel offers a meticulously
+                                crafted stay experience where luxury and uniqueness come together to meet all your
+                                desires. Enjoy an exceptional experience at Maden Taiba Hotel, offering 317 elegantly
+                                designed rooms to meet all your needs. Each room is equipped with the latest
+                                technologies and modern amenities to ensure your comfort and enjoyment. Your stay at
+                                Maden Taiba guarantees a variety of fine dining options, conference and event
+                                facilities, adding a touch of relaxation and entertainment to your experience.
+
+
+                                <br>
+                                <br>
+                                <strong>
+                                    Location
+                                </strong>
+                                <br>
+                                24°28'21"N 39°36'30"E
+                                <br>
+                            </p>
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+                    <!-- Qaba card -->
+         <div id="qaba_hotel_card" class="card position-absolute top-50 end-0 translate-middle-y m-3">
+    <div class="card-header">
+        <h3 class="inline-block">Qaba Hotel</h3>
+        <button type="button" class="btn-close float-end closeCardButton" aria-label="Close"></button>
+    </div>
+
+    <div class="card-body p-0">
+        <div id="qaba_hotel_carousel" class="carousel slide qaba_hotel_gallery">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <a href="img/qaba_hotel/Image_test.png">
+                        <img src="img/qaba_hotel/Image_test.png" class="d-block w-100" alt="Qaba Hotel 1" />
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="img/qaba_hotel/Image_test1.png">
+                        <img src="img/qaba_hotel/Image_test1.png" class="d-block w-100" alt="Qaba Hotel 2" />
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="img/qaba_hotel/Image_test2.png">
+                        <img src="img/qaba_hotel/Image_test2.png" class="d-block w-100" alt="Qaba Hotel 3" />
+                    </a>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button"
+                data-bs-target="#qaba_hotel_carousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button"
+                data-bs-target="#qaba_hotel_carousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <div class="p-3">
+            <h5 class="card-title">Qaba Hotel</h5>
+            <p class="card-text">
+                <strong>name:</strong>
+                Qaba Hotel
+                <br>
+                <strong>
+                    description:
+                </strong>
+                فندق قباء يقع على بعد 10.9 كيلومتر من المسجد النبوي... (وصف الفندق هنا)
+                <br>
+                <br>
+                <strong>
+                    Location:
+                </strong>
+                <br>
+                24°24'24.5"N 39°37'34.8"E
+            </p>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/simpleLightbox.js"></script>
+    <script src="js/script.js"></script> 
+	<script>
+
+</script>
+ 
+</body>
+
+</html>

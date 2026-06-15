@@ -1,0 +1,415 @@
+html,
+body,
+#map {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.sidebar {
+    background-color: #f8f9fa;
+    padding: 1rem;
+}
+.card {
+    max-width: 350px;
+}
+
+.card h3 {
+    display: inline;
+    font-size: 1.2em;
+}
+
+.card .card-body {
+    max-height: 575px;
+    overflow-y: auto;
+}
+
+.carousel .carousel-inner {
+    max-height: 250px;
+    overflow: hidden;
+}
+
+.map-container {
+    height: calc(100vh - 56px);
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.map {
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.25s ease;
+    cursor: grab;
+}
+
+.map:active {
+    cursor: grabbing;
+}
+
+.pin-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 56px);
+    pointer-events: none; /* Allow interactions with the map below */
+    transition: transform 0.25s ease; /* Smooth transition */
+}
+
+.pin {
+    position: absolute;
+    width: 20px;
+    height: 24px;
+    transform: translate(-50%, -50%); /* Center the pin */
+    pointer-events: auto; /* Enable interaction with pins */
+}
+
+.pin img {
+    width: 20px;
+    height: 24px;
+}
+
+.pin a span {
+    position: absolute;
+    color: #fff;
+    text-align: center;
+    font-size: 0.8em;
+    text-shadow: 0 0 3px #000000;
+}
+
+.pin a.active::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 75px;
+    height: 75px;
+    border: 5px solid rgba(255, 255, 255, 1);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulse 1s infinite; /* Continuous pulsing animation */
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(0.5); /* Start small */
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1.5); /* Grow larger and fade out */
+    }
+}
+
+/* Initially hide all cards */
+.card {
+    display: none;
+}
+
+.locations_list img {
+    margin-right: 3px;
+}
+
+.list-group-item {
+    font-size: 0.9em;
+}
+
+.list-group-item.active {
+    color: #001d35;
+    font-size: 0.9em;
+    font-weight: bold;
+    background-color: #c2e7ff;
+    border-color: #c2e7ff;
+}
+
+.pin img.path {
+    pointer-events: none; /* Make the image non-interactive */
+    display: none;
+}
+
+#al_rawda_royal_inn_path {
+    width: 82px;
+    height: auto;
+    position: relative;
+    top: 8px;
+    left: -75px;
+}
+
+#finda_al_madinah_hotel_path{
+    width: 85px;
+    height: auto;
+    position: relative;
+    top: -135px;
+    left: -5px;
+}
+
+#maien_al_madinah_hotel_path{
+    width: 77px;
+    height: auto;
+    position: relative;
+    top: -160px;
+    left: -36px;
+}
+
+#valy_al_madinah_path{
+    width: 90px;
+    height: auto;
+    position: relative;
+    top: -160px;
+    left: -7px;
+}
+
+#view_hotel_path{
+    width: 74px;
+    height: auto;
+    position: relative;
+    top: -132px;
+    left: -50px;
+}
+
+#maden_hotel_path {
+    width: 134px;
+    height: auto;
+    position: relative;
+    top: 8px;
+    left: -124px;    
+}
+
+#maden_hotel_path {
+    width: 90px;
+    height: auto;
+    position: relative;
+    top: 2px;
+    left: 12px;    
+}
+
+#nozol_royal_inn_path {
+    width: 105px;
+    height: auto;
+    position: relative;
+    top: 3px;
+    left: 8px;
+}
+
+#ruva_al_madinah_path {
+    width: 80px;
+    height: auto;
+    position: relative;
+    top: 4px;
+    left: 10px;
+}
+
+#maden_taiba_path {
+    width: 110px;
+    height: auto;
+    position: relative;
+    top: -5px;
+    left: -90px;
+}
+
+#zaha_al_madinah_hotel_path {
+    width: 392px;
+    height: auto;
+    position: relative;
+    top: -33px;
+    left: 10px;
+}
+
+ 
+
+#zaha_hotel_path {
+    width: 370px;
+    height: auto;
+    position: relative;
+    top: -33px;
+    left: 10px;
+}
+
+#zaha_taiba_hotel_path{
+    width: 134px;
+    height: auto;
+    position: relative;
+    top: 9px;
+    left: -124px;
+}
+
+
+@media screen and (min-width: 1367px) and (max-width: 1599px) and (-webkit-min-device-pixel-ratio: 1.25) {
+    
+    #al_rawda_royal_inn_path {
+        width: 60px;
+        top: 0px;
+        left: -53px;
+    }
+
+    #finda_al_madinah_hotel_path{
+        width: 65px;
+        top: -108px;
+        left: -4px;
+    }
+
+    #maien_al_madinah_hotel_path{
+        width: 60px;
+        top: -125px;
+        left: -26px;
+    }
+    
+    #valy_al_madinah_path{
+        width: 70px;
+        top: -125px;
+        left: -4px;
+    } 
+
+    #view_hotel_path{
+        width: 60px;
+        top: -107px;
+        left: -38px;
+    }
+
+    #maden_hotel_path {
+        width: 67px;
+        top: 0px;
+        left: 11px;    
+    }
+
+    #nozol_royal_inn_path {
+        width: 84px;
+        top: 0px;
+        left: 9px;  
+    }
+
+    #ruva_al_madinah_path {
+        width: 65px;
+        top: 0px;
+        left: 10px;
+    }
+
+    #maden_taiba_path {
+        width: 80px;
+        top: -7px;
+        left: -64px;
+    }
+
+    #zaha_al_madinah_hotel_path {
+        width: 318px;
+        top: -30px;
+        left: 10px;
+    } 
+
+    
+    #zaha_hotel_path {
+        width: 300px;
+        top: -30px;
+        left: 10px;
+    }
+
+    #zaha_taiba_hotel_path {
+        width: 105px;
+        top: 0px;
+        left: -96px;
+    }
+}
+ 
+
+ 
+@media (max-width: 1366px) { 
+
+    #al_rawda_royal_inn_path {
+        width: 70px;
+        top: 0px;
+        left: -62px;
+    }
+
+    #finda_al_madinah_hotel_path{
+        width: 70px;
+        top: -115px;
+        left: -2px;
+    }
+
+    
+    #maien_al_madinah_hotel_path{
+        width: 64px;
+        top: -132px;
+        left: -32px;
+    }
+    
+    #valy_al_madinah_path{
+        width: 72px;
+        top: -130px;
+        left: -2px;
+    }
+
+    #view_hotel_path{
+        width: 60px;
+        top: -109px;
+        left: -39px;
+    }
+
+    #maden_hotel_path {
+        width: 72px;
+        top: 0px;
+        left: 13px;    
+    }
+
+    #nozol_royal_inn_path {
+        width: 81px;
+        top: 0px;
+        left: 9px;  
+    }
+
+    #ruva_al_madinah_path {
+        width: 65px;
+        top: 0px;
+        left: 9px;
+    }
+
+    #maden_taiba_path {
+        width: 85px;
+        top: 0px;
+        left: -68px;
+    }
+
+    #zaha_al_madinah_hotel_path {
+        width: 283px;
+        top: -30px;
+        left: 9px;
+    }
+ 
+    
+    #zaha_hotel_path {
+        width: 268px;
+        top: -30px;
+        left: 9px;
+    } 
+ 
+    #zaha_taiba_hotel_path {
+        width: 105px;
+        top: 7px;
+        left: -87px;
+    }
+    /* تنسيق خاص بمسار فندق قباء لضمان ظهوره فوق الخريطة الجديدة */
+#qaba_hotel_path {
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    z-index: 10 !important;
+    pointer-events: none;
+    object-fit: fill; /* ليتطابق مع أبعاد الصورة 011 */
+
+}
+
+/* لضمان عدم اختفاء البن خلف المسار */
+.qaba_pin {
+    z-index: 20 !important;
+}
+}  
+
+
+ 
